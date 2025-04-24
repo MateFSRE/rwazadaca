@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Broj indeksa:2184 | Stranica za RWA. 2. Godina Racunarstva">
+    <title>Mate Raic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            max-width: 1000px;
+			background-color: #052035;
+            margin: 20px auto;
+            border: 1px solid #000;
+        }
+        
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+		
+        .okvir {
+            display: grid;
+			background-color: #083454;
+            grid-template-rows: auto auto 1fr auto;
+            width: 100%;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px ;
+        }
+        
+        .logo {
+            background-color: #d6e0e8;
+            width: 70%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px ;
+			background-image: url('fsre_sum_cover.jpg');
+			background-size: cover; 
+			background-position: center; 
+        }
+        
+        .login {
+            background-color: #0A416A;
+            width: 30%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+			margin: 10px ;
+        }
+        
+        .top-nav {
+            background-color: #0A416A;
+            padding: 15px;
+            text-align: center;
+            margin: 10px ;
+        }
+		
+		.top-nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        .top-nav li {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .top-nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .content {
+            display: flex;
+            min-height: 300px;
+        }
+        
+        .main-content {
+            background-color: #0A416A;
+            width: 70%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px ;
+        }
+        
+        .sidebar {
+            background-color: #0A416A;
+			color: #fff;
+            width: 30%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+			margin: 10px ;
+        }
+        
+        .user-data {
+            background-color: #225478;
+            color: #fff;
+            padding: 25px;
+            margin: 20px;
+            text-align: center;
+            width: 80%;
+        }
+        
+        .promo {
+            background-color: #225478;
+            color: #fff;
+            padding: 25px;
+            margin: 20px;
+            text-align: left;
+            width: 80%;
+            height: 240px;
+			margin: 10px ;
+        }
+		
+		.promo img{
+			float: left;
+			border: solid 5px #0A416A;
+            margin: 0 20px 20px 0; 
+            width: 60%; 
+		}
+        
+        .footer {
+            background-color: #0A416A;
+            padding: 15px;
+			color:#fff;
+            text-align: center;
+            margin: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="okvir">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="login"><a href="https://eucenje.sum.ba/simplesaml/module.php/saml/disco.php?entityID=https%3A%2F%2Feucenje.sum.ba%2Fsimplesaml%2Fmodule.php%2Fsaml%2Fsp%2Fmetadata.php%2Fmoodle-sum-sp&return=https%3A%2F%2Feucenje.sum.ba%2Fsimplesaml%2Fmodule.php%2Fsaml%2Fsp%2Fdiscoresp.php%3FAuthID%3D_3ecca52092f7e4036fe45687a09328733d15ab4751%253Ahttps%253A%252F%252Feucenje.sum.ba%252Fsimplesaml%252Fmodule.php%252Fcore%252Fas_login.php%253FAuthId%253Dmoodle-sum-sp%2526ReturnTo%253Dhttps%25253A%25252F%25252Feucenje.sum.ba%25252Fmoodle%25252Fauth%25252Fsimplesaml%25252Findex.php%25253Flast_page%25253Dhttps%25253A%25252F%25252Feucenje.sum.ba%25252Fmoodle%25252Fcourse%25252Findex.php%25253Fcategoryid%25253D8&returnIDParam=idpentityid">Login/Account/Register</a></div>
+        </div>
+        
+        <div class="top-nav">
+			<ul>
+				<li><a href="https://fsre.sum.ba/" class="active">Početna</a></li>
+				<li><a href="https://fsre.sum.ba/o-fakultetu">O fakultetu</a></li>
+				<li><a href="https://fsre.sum.ba/upisi">Upisi</a></li>
+				<li><a href="https://fsre.sum.ba/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+        
+        <div class="content">
+            <div class="main-content">
+                <div class="user-data">
+				Dio na kojem ce se nalaziti korisnicki dio stranice.<br>
+				Za sada ne znam sta bi stavio ovdje tako da cu samo napisati ovaj tekst.
+				</div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="promo">
+				<img src="Profilna.jpg"></img>
+				Student:Mate Raic <br> Broj Indeksa:2184 <br> Predmet: Razvoj Web Aplikacija
+				</div>
+            </div>
+        </div>
+        
+        <div class="footer">E-mail Studenta: <b>mate.raic@fsre.sum.ba</b></div>
+    </div>
+</body>
+</html>
