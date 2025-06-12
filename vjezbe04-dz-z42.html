@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Zadaci</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: red; border-bottom: 2px solid red; padding-bottom: 5px; }
+        .zadatak { margin-bottom: 30px; padding: 15px; background-color: #f8f9fa; border-left: 4px solid red; }
+        .rezultat { background-color: #e8f5e8; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Zadaci - Rješenja</h1>
+    
+    <div class="zadatak">
+        <h2>Zadatak 2: Parni brojevi od 1 do 100 i njihovi kvadrati</h2>
+        <div class="rezultat" id="zadatak2"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 3: Prosti brojevi od 1 do 1000</h2>
+        <div class="rezultat" id="zadatak3"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 4: Rad s poljima</h2>
+        <div class="rezultat" id="zadatak4"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 5: Objekti i petlje</h2>
+        <div class="rezultat" id="zadatak5"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 6: Objekt pas</h2>
+        <div class="rezultat" id="zadatak6"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 7: Anonimna funkcija</h2>
+        <div class="rezultat" id="zadatak7"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 8: Filtriranje polja stringova</h2>
+        <div class="rezultat" id="zadatak8"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 9: Savršeni brojevi</h2>
+        <div class="rezultat" id="zadatak9"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 10: Random brojevi</h2>
+        <div class="rezultat" id="zadatak10"></div>
+    </div>
+
+    <div class="zadatak">
+        <h2>Zadatak 11: Analiza temperature</h2>
+        <div class="rezultat" id="zadatak11"></div>
+    </div>
+
+    <script type="text/javascript">
+    <!--
+    
+    function zadatak2() {
+        let rezultat = "<h3>Parni brojevi i njihovi kvadrati:</h3>";
+        console.log("=== ZADATAK 2: Parni brojevi i njihovi kvadrati ===");
+        
+        for (let i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                let kvadrat = i * i;
+                rezultat += `Broj: ${i}, Kvadrat: ${kvadrat}<br>`;
+                console.log(`Broj: ${i}, Kvadrat: ${kvadrat}`);
+            }
+        }
+        document.getElementById('zadatak2').innerHTML = rezultat;
+    }
+
+    // ZADATAK 3: Prosti brojevi od 1 do 1000
+    function jeProst(broj) {
+        if (broj < 2) return false;
+        for (let i = 2; i <= Math.sqrt(broj); i++) {
+            if (broj % i === 0) return false;
+        }
+        return true;
+    }
+
+    function zadatak3() {
+        let rezultat = "<h3>Prosti brojevi od 1 do 1000:</h3>";
+        console.log("=== ZADATAK 3: Prosti brojevi od 1 do 1000 ===");
+        
+        for (let i = 1; i <= 1000; i++) {
+            if (jeProst(i)) {
+                rezultat += i + "<br>";
+                console.log(i);
+            }
+        }
+        document.getElementById('zadatak3').innerHTML = rezultat;
+    }
+
+    function zadatak4() {
+        let polje = new Array(1,2,3,4,7,8,5,6,9,55,12,4,85);
+        let rezultat = "<h3>Rad s poljima:</h3>";
+        console.log("=== ZADATAK 4: Rad s poljima ===");
+
+        rezultat += `a) Inicijalna dužina polja: ${polje.length}<br>`;
+        console.log(`a) Inicijalna dužina polja: ${polje.length}`);
+
+        let poljeDesc = [...polje].sort((a, b) => b - a);
+        rezultat += `b) Polje sortirano od najvećeg ka najmanjem: [${poljeDesc.join(', ')}]<br>`;
+        console.log(`b) Polje sortirano od najvećeg ka najmanjem: [${poljeDesc.join(', ')}]`);
+
+        let poljeAsc = [...polje].sort((a, b) => a - b);
+        rezultat += `c) Polje sortirano od najmanjeg ka najvećem: [${poljeAsc.join(', ')}]<br>`;
+        console.log(`c) Polje sortirano od najmanjeg ka najvećem: [${poljeAsc.join(', ')}]`);
+
+        poljeAsc.pop();
+        rezultat += `d) Polje nakon uklanjanja zadnjeg člana: [${poljeAsc.join(', ')}]<br>`;
+        console.log(`d) Polje nakon uklanjanja zadnjeg člana: [${poljeAsc.join(', ')}]`);
+
+        poljeAsc.push(19, 22);
+        rezultat += `e) Polje nakon dodavanja 19 i 22: [${poljeAsc.join(', ')}]<br>`;
+        console.log(`e) Polje nakon dodavanja 19 i 22: [${poljeAsc.join(', ')}]`);
+
+        let polje2 = ["Banana", "Orange", "Apple", "Mango"];
+        let polje_final = poljeAsc.concat(polje2);
+        rezultat += `f) Polje_final nakon spajanja: [${polje_final.join(', ')}]<br>`;
+        console.log(`f) Polje_final nakon spajanja: [${polje_final.join(', ')}]`);
+
+        document.getElementById('zadatak4').innerHTML = rezultat;
+    }
+
+    function zadatak5() {
+        let objekti = [
+            {firstName: "Marko", lastName: "Maric", age: 40, eyeColor: "black"},
+            {firstName: "Ana", lastName: "Anic", age: 25, eyeColor: "blue"},
+            {firstName: "Petar", lastName: "Petrovic", age: 35, eyeColor: "brown"},
+            {firstName: "Milica", lastName: "Milic", age: 28, eyeColor: "green"}
+        ];
+
+        let rezultat = "<h3>Objekti i njihove vrijednosti:</h3>";
+        console.log("=== ZADATAK 5: Objekti i petlje ===");
+
+        for (let i = 0; i < objekti.length; i++) {
+            rezultat += `<strong>Objekt ${i + 1}:</strong><br>`;
+            console.log(`Objekt ${i + 1}:`);
+            
+            for (let kljuc in objekti[i]) {
+                rezultat += `&nbsp;&nbsp;${kljuc}: ${objekti[i][kljuc]}<br>`;
+                console.log(`  ${kljuc}: ${objekti[i][kljuc]}`);
+            }
+            rezultat += "<br>";
+        }
+
+        document.getElementById('zadatak5').innerHTML = rezultat;
+    }
+
+    function zadatak6() {
+        let pas = {
+            ime: "Reks",
+            godine: 2
+        };
+
+        pas.zvuk = function() {
+            return "AV AV!";
+        };
+
+        let rezultat = "<h3>Objekt pas:</h3>";
+        rezultat += `Ime psa: ${pas.ime}<br>`;
+        rezultat += `Godine: ${pas.godine}<br>`;
+        rezultat += `Zvuk koji pravi: ${pas.zvuk()}<br>`;
+
+        console.log("=== ZADATAK 6: Objekt pas ===");
+        console.log(`Ime psa: ${pas.ime}`);
+        console.log(`Godine: ${pas.godine}`);
+        console.log(`Zvuk koji pravi: ${pas.zvuk()}`);
+
+        document.getElementById('zadatak6').innerHTML = rezultat;
+    }
+
+    function zadatak7() {
+        let kvadratFunkcija = function(vrijednost) {
+            if (typeof vrijednost === 'number' && !isNaN(vrijednost)) {
+                return vrijednost * vrijednost;
+            } else {
+                return "Greška: Proslijeđena vrijednost nije broj!";
+            }
+        };
+
+        let rezultat = "<h3>Testiranje anonimne funkcije:</h3>";
+        console.log("=== ZADATAK 7: Anonimna funkcija ===");
+
+        let test1 = kvadratFunkcija(5);
+        rezultat += `Kvadrat broja 5: ${test1}<br>`;
+        console.log(`Kvadrat broja 5: ${test1}`);
+
+        let test2 = kvadratFunkcija("tekst");
+        rezultat += `Proslijedjen tekst: ${test2}<br>`;
+        console.log(`Proslijedjen tekst: ${test2}`);
+
+        document.getElementById('zadatak7').innerHTML = rezultat;
+    }
+
+    function zadatak8() {
+        let arr = ['Ovo', 'je', 'My', 'prvi', 'komad', 'OF', 'JAVASCRIPT', 'koda', 'Koji', 'je', 'proradio'];
+        
+        function filtrirajPolje(polje) {
+            return polje.filter(function(element) {
+                let imaVelikoSlovo = /[A-Z]/.test(element);
+                let ima5IliViseZnakova = element.length >= 5;
+                
+                return imaVelikoSlovo || ima5IliViseZnakova;
+            });
+        }
+
+        let novoPolje = filtrirajPolje(arr);
+        
+        let rezultat = "<h3>Filtriranje polja stringova:</h3>";
+        rezultat += `Originalno polje: [${arr.join(', ')}]<br>`;
+        rezultat += `Filtrirano polje: [${novoPolje.join(', ')}]<br>`;
+
+        console.log("=== ZADATAK 8: Filtriranje polja stringova ===");
+        console.log(`Originalno polje: [${arr.join(', ')}]`);
+        console.log(`Filtrirano polje: [${novoPolje.join(', ')}]`);
+
+        document.getElementById('zadatak8').innerHTML = rezultat;
+    }
+
+    function jeSavrsen(broj) {
+        if (broj <= 1) return false;
+        let suma = 1;
+        for (let i = 2; i <= Math.sqrt(broj); i++) {
+            if (broj % i === 0) {
+                suma += i;
+                if (i !== broj / i) {
+                    suma += broj / i;
+                }
+            }
+        }
+        return suma === broj;
+    }
+
+    function nadjiSavrsene(granica) {
+        let savrseni = [];
+        for (let i = 1; i <= granica; i++) {
+            if (jeSavrsen(i)) {
+                savrseni.push(i);
+            }
+        }
+        return savrseni;
+    }
+
+    function zadatak9() {
+        let granica = 1000;
+        let savrseni = nadjiSavrsene(granica);
+        
+        let rezultat = "<h3>Savršeni brojevi:</h3>";
+        rezultat += `Savršeni brojevi do ${granica}: [${savrseni.join(', ')}]<br>`;
+
+        console.log("=== ZADATAK 9: Savršeni brojevi ===");
+        console.log(`Savršeni brojevi do ${granica}: [${savrseni.join(', ')}]`);
+
+        document.getElementById('zadatak9').innerHTML = rezultat;
+    }
+
+    
+    function petRandomBrojeva(min, max) {
+        let brojevi = [];
+        for (let i = 0; i < 5; i++) {
+            let randomBroj = Math.floor(Math.random() * (max - min + 1)) + min;
+            brojevi.push(randomBroj);
+        }
+        return brojevi;
+    }
+
+    function zadatak10() {
+        let min = 10;
+        let max = 50;
+        let randomBrojevi = petRandomBrojeva(min, max);
+        
+        let rezultat = "<h3>Random brojevi:</h3>";
+        rezultat += `Pet random brojeva između ${min} i ${max}: [${randomBrojevi.join(', ')}]<br>`;
+
+        console.log("=== ZADATAK 10: Random brojevi ===");
+        console.log(`Pet random brojeva između ${min} i ${max}: [${randomBrojevi.join(', ')}]`);
+
+        document.getElementById('zadatak10').innerHTML = rezultat;
+    }
+
+    function analizirajTemperature(tempDay) {
+        let datum = tempDay[0];
+        let temperature = tempDay.slice(1); 
+        
+        let minTemp = Math.min(...temperature);
+        let maxTemp = Math.max(...temperature);
+        let prosjek = temperature.reduce((suma, temp) => suma + temp, 0) / temperature.length;
+        
+        let rezultat = {
+            datum: datum,
+            minTemp: minTemp,
+            maxTemp: maxTemp,
+            prosjek: prosjek.toFixed(2)
+        };
+        
+        return rezultat;
+    }
+
+    function zadatak11() {
+        const tempDay = ['2023-11-29', -1, 0, -0.5, 0.5, 0, 1.2, 1.8, 2, 3, 4, 6, 9, 12, 7, 6, 6, 8, 5, 4, 2, 3, 2, 1, 0];
+        
+        let analiza = analizirajTemperature(tempDay);
+        
+        let rezultat = "<h3>Analiza temperature:</h3>";
+        rezultat += `Datum: ${analiza.datum}<br>`;
+        rezultat += `Najniža temperatura: ${analiza.minTemp}°C<br>`;
+        rezultat += `Najviša temperatura: ${analiza.maxTemp}°C<br>`;
+        rezultat += `Prosječna temperatura: ${analiza.prosjek}°C<br>`;
+
+        console.log("=== ZADATAK 11: Analiza temperature ===");
+        console.log(`Datum: ${analiza.datum}`);
+        console.log(`Najniža temperatura: ${analiza.minTemp}°C`);
+        console.log(`Najviša temperatura: ${analiza.maxTemp}°C`);
+        console.log(`Prosječna temperatura: ${analiza.prosjek}°C`);
+
+        document.getElementById('zadatak11').innerHTML = rezultat;
+    }
+
+    window.onload = function() {
+        zadatak2();
+        zadatak3();
+        zadatak4();
+        zadatak5();
+        zadatak6();
+        zadatak7();
+        zadatak8();
+        zadatak9();
+        zadatak10();
+        zadatak11();
+    };
+    -->
+    </script>
+</body>
+</html>
